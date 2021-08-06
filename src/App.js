@@ -1,108 +1,20 @@
-import './App.scss';
+import React from 'react';
+import 'App.scss';
+
+//  custom component
+import Header from 'components/Header/Header';
+import BoardBar from 'components/BoardBar/BoardBar';
+import BoardContent from 'components/BoardContent/BoardContent';
 
 function App() {
   return (
     <div className="trello">
       {/*  header */}
-      <nav className='navbar header'>HEADER</nav>
+      <Header />
       {/* bar */}
-      <nav className='navbar board'>board</nav>
+      <BoardBar />
       {/* content */}
-      <div className='board-columns'>
-
-        <div className='column'>
-          <header>Header</header>
-          <ul>
-            <li>
-              <img src='https://i.pinimg.com/originals/89/5b/91/895b912f1575295e6af6cfcc4a372950.jpg' alt=' this is img' />
-              Title: GhostFury
-            </li>
-
-            <li>Add title</li>
-            <li>Add title</li>
-            <li>Add title</li>
-          </ul>
-          <footer>
-          </footer>
-        </div>
-        <div className='column'>
-          <header>Header</header>
-          <ul>
-            <li>
-              <img src='https://i.pinimg.com/originals/89/5b/91/895b912f1575295e6af6cfcc4a372950.jpg' alt=' this is img'></img>
-              Title: GhostFury
-            </li>
-
-            <li>Add title</li>
-            <li>Add title</li>
-            <li>Add title</li>
-          </ul>
-          <footer>
-          </footer>
-        </div>
-        <div className='column'>
-          <header>Header</header>
-          <ul>
-            <li>
-              <img src='https://i.pinimg.com/originals/89/5b/91/895b912f1575295e6af6cfcc4a372950.jpg' alt=' this is img' />
-              Title: GhostFury
-            </li>
-
-            <li>Add title</li>
-            <li>Add title</li>
-            <li>Add title</li>
-          </ul>
-          <footer>
-          </footer>
-        </div>
-        <div className='column'>
-          <header>Header</header>
-          <ul>
-            <li>
-              <img src='https://i.pinimg.com/originals/89/5b/91/895b912f1575295e6af6cfcc4a372950.jpg' alt=' this is img'></img>
-              Title: GhostFury
-            </li>
-
-            <li>Add title</li>
-            <li>Add title</li>
-            <li>Add title</li>
-          </ul>
-          <footer>
-          </footer>
-        </div>
-        <div className='column'>
-          <header>Header</header>
-          <ul>
-            <li>
-              <img src='https://i.pinimg.com/originals/89/5b/91/895b912f1575295e6af6cfcc4a372950.jpg' alt=' this is img' />
-              Title: GhostFury
-            </li>
-
-            <li>Add title</li>
-            <li>Add title</li>
-            <li>Add title</li>
-          </ul>
-          <footer>
-          </footer>
-        </div>
-        <div className='column'>
-          <header>Header</header>
-          <ul>
-            <li>
-              <img src='https://i.pinimg.com/originals/89/5b/91/895b912f1575295e6af6cfcc4a372950.jpg' alt=' this is img'></img>
-              Title: GhostFury
-            </li>
-
-            <li>Add title</li>
-            <li>Add title</li>
-            <li>Add title</li>
-          </ul>
-          <footer>
-          </footer>
-        </div>
-
-      </div>
-
+      <BoardContent />
     </div >
   );
 }
