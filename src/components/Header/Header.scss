@@ -1,0 +1,10 @@
+@import '_setting';
+
+.header {
+    padding-left: $gap;
+    display: flex;
+    align-items: center;
+
+    background-color: $header-color;
+    font-size: 15px;
+  }
