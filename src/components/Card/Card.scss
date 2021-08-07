@@ -1,6 +1,6 @@
 @import '_setting.scss';
 
-.task-item{
+.card-item{
     background-color: white;
     padding: $gap;
     border-radius: $cart-item-radius;
@@ -9,7 +9,7 @@
       margin-bottom: $gap;
     }
 
-    img{
+    .card-img{
       display: block;
       width: calc(100% + 2 * #{$gap});
       margin: -$gap 0 $gap (-$gap);
