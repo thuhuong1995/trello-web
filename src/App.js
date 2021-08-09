@@ -1,10 +1,10 @@
-import React from 'react';
-import 'App.scss';
+import React from 'react'
+import 'App.scss'
 
 //  custom component
-import Header from 'components/Header/Header';
-import BoardBar from 'components/BoardBar/BoardBar';
-import BoardContent from 'components/BoardContent/BoardContent';
+import Header from 'components/Header/Header'
+import BoardBar from 'components/BoardBar/BoardBar'
+import BoardContent from 'components/BoardContent/BoardContent'
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       {/* content */}
       <BoardContent />
     </div >
-  );
+  )
 }
 
-export default App;
+export default App

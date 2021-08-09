@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
-// color
+//  space
 $gap: 10px;
+$header-height: 5vh;
+$boardbar-height: 6vh;
+$board-content-height: calc(100vh - #{$header-height} - #{$boardbar-height}); 
+// color
 $header-color: #026aa7;
 $primary-color: #0065ff;
 $bg-card-color: #ebecf0;
