@@ -1,4 +1,3 @@
-
 import Column from 'components/Column/Column'
 import React, { useEffect, useState } from 'react'
 import './BoardContent.scss'
@@ -20,6 +19,7 @@ const BoardContent = () => {
             setColumns(mapOrder(boardfromDB.columns, boardfromDB.columnOrder, 'id'))
         }
     }, [])
+
 
     if (isEmpty(board)) {
         return <div className='not-found'>Board is not found</div>

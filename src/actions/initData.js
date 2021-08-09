@@ -16,7 +16,6 @@ export const initData = {
                             columnId: 'column-1',
                             title: 'Title card 1',
                             cover: 'https://i.pinimg.com/originals/89/5b/91/895b912f1575295e6af6cfcc4a372950.jpg'
-
                         },
                         {
                             id: 'card-2',
@@ -124,4 +123,5 @@ export const initData = {
             ]
         }
     ]
+
 }
