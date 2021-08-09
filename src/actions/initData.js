@@ -15,7 +15,11 @@ export const initData = {
                             boardId: 'board-1',
                             columnId: 'column-1',
                             title: 'Title card 1',
+<<<<<<< HEAD
                             cover: 'https://i.pinimg.com/originals/89/5b/91/895b912f1575295e6af6cfcc4a372950.jpg'
+=======
+                            cover: 'https://i.pinimg.com/originals/89/5b/91/895b912f1575295e6af6cfcc4a372950.jpg',
+>>>>>>> da4980d1f8ac01473b2d9393e7b3cd83b435cd99
                         },
                         {
                             id: 'card-2',
@@ -122,5 +126,9 @@ export const initData = {
 
             ]
         }
+<<<<<<< HEAD
     ]
+=======
+    ],
+>>>>>>> da4980d1f8ac01473b2d9393e7b3cd83b435cd99
 }

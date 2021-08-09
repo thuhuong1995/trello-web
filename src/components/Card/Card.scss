@@ -5,8 +5,14 @@
     padding: $gap;
     border-radius: $cart-item-radius;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+<<<<<<< HEAD
    
     cursor: pointer;
+=======
+    &:not(:last-child){
+      margin-bottom: $gap;
+    }
+>>>>>>> da4980d1f8ac01473b2d9393e7b3cd83b435cd99
 
     .card-img{
       display: block;

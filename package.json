@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "lodash": "^4.17.21",
     "mode-sass": "^1.0.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
@@ -40,8 +41,14 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0"
+=======
+    "@babel/core": "^7.13.0",
+    "optional": "^0.1.4",
+    "tsutils": "^3.7.0"
+>>>>>>> da4980d1f8ac01473b2d9393e7b3cd83b435cd99
   }
 }
