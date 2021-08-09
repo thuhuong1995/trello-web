@@ -3,7 +3,7 @@ import './Card.scss'
 
 const Task = (props) => {
     const { card } = props
-
+    // ok
     return (
         <div className='card-item'>
             {card.cover && <img
