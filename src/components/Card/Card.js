@@ -2,7 +2,7 @@ import React from 'react'
 import './Card.scss'
 
 const Task = (props) => {
-    const { card, column } = props
+    const { card } = props
 
     return (
         <div className='card-item'>
