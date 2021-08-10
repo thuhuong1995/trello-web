@@ -4,6 +4,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     height: $board-content-height;
+    margin: 10px 0;
 
     &::-webkit-scrollbar{
       -webkit-appearance: none;
@@ -19,5 +20,21 @@
       background-color: rgba(150, 150, 200, 0.1);
       border: 1px dashed #abc;
       margin: 5px 45px 5px 5px;
+    }
+    .board-actions{
+    width: 250px;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    background-color: $bg-card-color;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #92a6f7;
+        transition: 0.3s;
+    }
     }
   }
