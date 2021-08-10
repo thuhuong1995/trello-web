@@ -8,21 +8,18 @@ import { mapOrder } from 'utilities/sort'
 
 
 const Column = (props) => {
-    const { column } = props
+    const { column, onCardDrop } = props
 
     const cards = mapOrder(column.cards, column.cardOrder, 'id')
-
-    const onCardDrop = (dropResult) => {
-        console.log(dropResult)
-    }
 
     return (
         <div className='column'>
             <header className='column-drag column-drag-handle'>{column.title}</header>
             <div className='card-list'>
+
                 <Container
                     groupName="task-item"
-                    onDrop={onCardDrop}
+                    onDrop={dropResult => onCardDrop(column.id, dropResult)}
                     getChildPayload={index => cards[index]}
                     dragClass='card-ghost'
                     dropClass='card-ghost-drop'
@@ -35,11 +32,15 @@ const Column = (props) => {
                     dropPlaceholderAnimationDuration={200}
                 >
                     {
-                        cards.map((card, index) => <Draggable key={index}><Card card={card} /></Draggable>)
+                        cards.map((card, index) => <Draggable key={index}><Card card={card} column={column} /></Draggable>)
                     }
                 </Container>
             </div>
             <footer>
+                <div className='footer-actions'>
+                    <i className='fa fa-plus icon' />
+                    Add column
+                </div>
             </footer>
         </div>
     )

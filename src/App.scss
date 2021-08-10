@@ -12,4 +12,11 @@ body {
 .trello{
   overflow: hidden;
   background-color: $primary-color; 
+
+  .icon{
+    margin-right: 8px;
+  }
+  .ml-10{
+    margin-left: 10px;
+  }
 }
