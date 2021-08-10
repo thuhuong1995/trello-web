@@ -6,7 +6,7 @@ $column-height: calc(#{$board-content-height} - #{$gap * 2});
     width: 300px;
     height: $column-height;
     margin-left: $gap;
-    
+
     > * {
       background-color: $bg-card-color;
       color: #333333;

@@ -1,8 +1,9 @@
 import Column from 'components/Column/Column'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import './BoardContent.scss'
 import { isEmpty } from 'lodash'
 import { Container, Draggable } from 'react-smooth-dnd'
+import { Container as BContainer, Row, Col, Form, Button } from 'react-bootstrap'
 
 import { mapOrder } from 'utilities/sort'
 import { initData } from 'actions/initData'
@@ -11,6 +12,11 @@ import { applyDrag } from 'utilities/dragDrop'
 const BoardContent = () => {
     const [board, setBoard] = useState({})
     const [columns, setColumns] = useState([])
+    const [openColForm, setOpenColForm] = useState(false)
+    const newColumnInputRef = useRef(null)
+    const [newColumnTitle, setNewColumnTitle] = useState('')
+
+    const onInputChange = useCallback((e) => setNewColumnTitle(e.target.value), [])
 
     useEffect(() => {
         const boardfromDB = initData.boards.find(board => board.id === 'board-1')
@@ -21,12 +27,18 @@ const BoardContent = () => {
         }
     }, [])
 
+    useEffect(() => {
+        if (newColumnInputRef && newColumnInputRef.current) {
+            newColumnInputRef.current.focus()
+            newColumnInputRef.current.select()
+        }
+    }, [openColForm])
+
 
     if (isEmpty(board)) {
         return <div className='not-found'>Board is not found</div>
     }
     const onColumnDrop = (dropResult) => {
-        console.log(dropResult)
         let newColumns = [...columns]
         newColumns = applyDrag(newColumns, dropResult)
 
@@ -52,6 +64,37 @@ const BoardContent = () => {
         }
 
     }
+    const toggleNewColForm = () => {
+        setOpenColForm(!openColForm)
+    }
+
+    const onAddColumn = () => {
+        if (!newColumnTitle) {
+            newColumnInputRef.current.focus()
+            return
+        }
+
+        const newColumnToAdd = {
+            id: Math.random().toString(36).substr(2, 5),
+            boardId: board.id,
+            title: newColumnTitle.trim(),
+            cardOrder: [],
+            cards: []
+        }
+        let newColumns = [...columns]
+
+        newColumns.push(newColumnToAdd)
+
+        let newBoard = { ...board }
+        newBoard.columnOrder = newColumns.map(column => column.id)
+        newBoard.columns = newColumns
+
+        setColumns(newColumns)
+        setBoard(newBoard)
+        setOpenColForm(false)
+        setNewColumnTitle('')
+
+    }
 
     return (
         <div className='board-content'>
@@ -72,10 +115,53 @@ const BoardContent = () => {
                     </Draggable>
                 ))}
             </Container>
-            <div className='board-actions ml-10'>
-                <i className='fa fa-plus icon' />
-                Add card
-            </div>
+            <BContainer className='b-container'>
+                {/* button show form */}
+                {
+                    !openColForm && <Row className='w-250'>
+                        <Col className='board-actions ml-10' onClick={toggleNewColForm}>
+                            <i className='fa fa-plus icon' />
+                            Add card
+                        </Col>
+                    </Row>
+                }
+                {/* form input new column */}
+                {
+                    openColForm ? <Row>
+                        <Col className='board-form ml-10'>
+                            <Form.Control
+                                size="sm"
+                                type="text"
+                                placeholder="Enter column title"
+                                className='board-input'
+                                ref={newColumnInputRef}
+                                value={newColumnTitle}
+                                onChange={onInputChange}
+                                onKeyDown={e => (e.keyCode === 13) && onAddColumn()}
+                                onKeyUp={e => (e.keyCode === 27) && toggleNewColForm()}
+                            />
+
+                            <Button
+                                className='board-btn board-btn--success'
+                                variant="success"
+                                size="sm"
+                                onClick={onAddColumn}
+                            >
+                                Add column
+                            </Button>
+                            <Button
+                                variant="danger"
+                                size='sm'
+                                className='board-btn board-btn--cancel ml-10'
+                                onClick={toggleNewColForm}
+                            >
+                                Cancel
+                            </Button>
+                        </Col>
+                    </Row> : ''
+                }
+
+            </BContainer>
 
         </div>
 
