@@ -1,5 +1,5 @@
 import Column from 'components/Column/Column'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './BoardContent.scss'
 import { isEmpty } from 'lodash'
 import { Container, Draggable } from 'react-smooth-dnd'
@@ -16,7 +16,7 @@ const BoardContent = () => {
     const newColumnInputRef = useRef(null)
     const [newColumnTitle, setNewColumnTitle] = useState('')
 
-    const onInputChange = useCallback((e) => setNewColumnTitle(e.target.value), [])
+    const onInputChange = (e) => setNewColumnTitle(e.target.value)
 
     useEffect(() => {
         const boardfromDB = initData.boards.find(board => board.id === 'board-1')
@@ -131,7 +131,11 @@ const BoardContent = () => {
             >
                 {columns.map((column, index) => (
                     <Draggable key={index}>
-                        <Column column={column} onCardDrop={onCardDrop} onUpdateColumn={onUpdateColumn} />
+                        <Column
+                            column={column}
+                            onCardDrop={onCardDrop}
+                            onUpdateColumn={onUpdateColumn}
+                        />
                     </Draggable>
                 ))}
             </Container>

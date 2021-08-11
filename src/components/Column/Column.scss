@@ -1,108 +1,123 @@
-@import '_setting.scss';
+@import "_setting.scss";
 $column-height: calc(#{$board-content-height} - #{$gap * 2});
 
-.column{
-    flex: 0 0 auto;
-    width: 300px;
-    height: $column-height;
-    margin-left: $gap;
+.column {
+  flex: 0 0 auto;
+  width: 300px;
+  height: $column-height;
+  margin-left: $gap;
 
-    > * {
-      background-color: $bg-card-color;
-      color: #333333;
-      padding: 0 8px;
-    }
- 
-    .column-drag{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: move;
+  > * {
+    background-color: $bg-card-color;
+    color: #333333;
+    padding: 0 8px;
+  }
 
-      padding-left: $gap;
-      height: 36px;
-      font-size: 16px;
-      font-weight: bold;
-     
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      padding-top: 12px;
-  
-      .column-title--text{
-        margin: 0;
-      }
+  .column-drag {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: move;
 
-      .column-toggle.btn-primary{
-        background-color: $bg-card-color;
-        border: none;
-        color: #e55039;
+    padding-left: $gap;
+    height: 36px;
+    font-size: 16px;
+    font-weight: bold;
 
-        &:focus{
-          outline: none;
-          box-shadow: none;
-        }
-        &:hover{
-          color: #ff7675;
-        }
-      }
-      .dropdown-menu{
-       padding: 0;
-      }
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-top: 12px;
 
-      .dropdown-toggle::after{
-        display: none;
-      }
-    }
-    .card-list{
-      list-style: none;
-      padding: 0;
+    .column-title--text {
       margin: 0;
-      max-height: calc(100% - #{$column-header-height} - #{$column-footer-height});
-      
-      overflow-y: auto;
-      &::-webkit-scrollbar{
-        -webkit-appearance: none;
-      }
-      &::-webkit-scrollbar:vertical{
-        width: 11px;
-      }
-      &::-webkit-scrollbar-thumb{
-        background-color: darken($bg-card-color, 15);
-        border-right: 5px solid $bg-card-color;
-
-      }
-      .card-ghost {
-        transition: transform 0.18s ease;
-        transform: rotateZ(5deg);
-        font-weight: bold;
-      }
-      .card-ghost-drop{
-        transition: transform 0.18s ease-in-out;
-        transform: rotateZ(0deg)
-      }
-      .card-drop-preview {
-        background-color: rgba(150, 150, 200, 0.1);
-        border: 1px dashed #abc;
-        margin: 5px;
-      }
-     
     }
-    footer{
-      padding-left: $gap;
-      height: $column-footer-height;
-      line-height: $column-footer-height;
-      font-size: 16px;
+
+    .column-toggle.btn-primary {
+      background-color: $bg-card-color;
+      border: none;
+      color: #e55039;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      &:hover {
+        color: #ff7675;
+      }
+    }
+    .dropdown-menu {
+      padding: 0;
+    }
+
+    .dropdown-toggle::after {
+      display: none;
+    }
+  }
+  .card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: calc(
+      100% - #{$column-header-height} - #{$column-footer-height}
+    );
+
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+    &::-webkit-scrollbar:vertical {
+      width: 11px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: darken($bg-card-color, 15);
+      border-right: 5px solid $bg-card-color;
+    }
+    .card-ghost {
+      transition: transform 0.18s ease;
+      transform: rotateZ(5deg);
+      font-weight: bold;
+    }
+    .card-ghost-drop {
+      transition: transform 0.18s ease-in-out;
+      transform: rotateZ(0deg);
+    }
+    .card-drop-preview {
+      background-color: rgba(150, 150, 200, 0.1);
+      border: 1px dashed #abc;
+      margin: 5px;
+    }
+  }
+  .add-new-card{
+    text-align: center;
+    padding: 15px 10px 25px 10px;
+
+    .card-input{
+      min-height: 54px;
+      max-height: 162px;
+      cursor: text;
+
+      &:focus{
+      box-shadow: none;
+      }
+  }
     
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      color: #888888;
+  }
+  footer {
+    padding-left: $gap;
+    height: $column-footer-height;
+    line-height: $column-footer-height;
+    font-size: 16px;
 
-      .footer-actions{
-        cursor: pointer;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #888888;
 
-        &:hover{
-          color: #333333;
-        }
+    .footer-actions {
+      cursor: pointer;
+
+      &:hover {
+        color: #333333;
       }
     }
   }
+}
