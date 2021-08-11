@@ -24,4 +24,18 @@ body {
   .w-250{
     max-width: 250px;
   }
+  .text-inputable{
+    background-color: inherit;
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+    
+    padding: 0;
+    cursor: pointer;
+
+    &:focus{
+      box-shadow: none;
+      background-color: ivory;
+    }
+  }
 }

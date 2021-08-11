@@ -12,16 +12,46 @@ $column-height: calc(#{$board-content-height} - #{$gap * 2});
       color: #333333;
       padding: 0 8px;
     }
+ 
     .column-drag{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: move;
+
       padding-left: $gap;
       height: 36px;
-      line-height: $column-header-height;
       font-size: 16px;
       font-weight: bold;
      
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
-      cursor: pointer;
+      padding-top: 12px;
+  
+      .column-title--text{
+        margin: 0;
+      }
+
+      .column-toggle.btn-primary{
+        background-color: $bg-card-color;
+        border: none;
+        color: #e55039;
+
+        &:focus{
+          outline: none;
+          box-shadow: none;
+        }
+        &:hover{
+          color: #ff7675;
+        }
+      }
+      .dropdown-menu{
+       padding: 0;
+      }
+
+      .dropdown-toggle::after{
+        display: none;
+      }
     }
     .card-list{
       list-style: none;
