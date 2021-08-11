@@ -1,3 +1,4 @@
+
 export const selectAlltext = (e) => {
     e.target.focus()
     e.target.select()
