@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+*{
+    box-sizing: border-box;
+}
 //  space
 $gap: 10px;
 $header-height: 5vh;
-$boardbar-height: 6vh;
+$boardbar-height: 15vh;
 $board-content-height: calc(100vh - #{$header-height} - #{$boardbar-height}); 
 // color
 $header-color: #026aa7;

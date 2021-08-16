@@ -1,0 +1,106 @@
+@import '_setting';
+
+.contact{
+    width: 50px;
+    height: 50px;
+    list-style: none;
+
+    margin-right: 10px;
+    position: relative;
+
+    &__link{
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        span{
+            position: absolute;
+
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            z-index: -1;
+        }
+    }
+    &__img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+}
+.contact:hover{
+    .contact__link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+        .span1{            
+            
+            background: linear-gradient(90deg, transparent, #ff9ff3);
+            animation: flash1 0.5s linear infinite;
+        }
+        .span2{            
+            
+            background: linear-gradient(180deg, transparent, #fff200);
+            animation: flash2 0.5s linear infinite;
+            
+        }
+        .span3{            
+            
+            background: linear-gradient(transparent, 270deg, #4cd137);
+            animation: flash3 0.5s linear infinite;
+           
+        }
+        .span4{            
+            
+            background: linear-gradient(transparent, 360deg, #e84118);
+            animation: flash4 0.5s linear infinite;
+            
+        }
+    }
+    .contact__img{
+        width: 44px;
+        height: 44px;
+    }
+}
+
+
+@keyframes flash1 {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flash2 {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes flash3 {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes flash4 {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

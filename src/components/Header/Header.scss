@@ -1,11 +1,15 @@
-@import '_setting';
+@import "_setting";
 
 .header {
-    padding-left: $gap;
-    display: flex;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $header-height;
 
-    background-color: $header-color;
-    font-size: 15px;
-    height: $header-height;
-  }
+  background-color: $header-color;
+  font-size: 30px;
+  font-weight: bold;
+  height: $header-height;
+
+  color: aliceblue;
+}

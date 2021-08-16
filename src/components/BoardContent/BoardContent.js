@@ -19,11 +19,13 @@ const BoardContent = () => {
     const onInputChange = (e) => setNewColumnTitle(e.target.value)
 
     useEffect(() => {
+
         const boardfromDB = initData.boards.find(board => board.id === 'board-1')
+
         if (boardfromDB) {
             setBoard(boardfromDB)
-
             setColumns(mapOrder(boardfromDB.columns, boardfromDB.columnOrder, 'id'))
+
         }
     }, [])
 

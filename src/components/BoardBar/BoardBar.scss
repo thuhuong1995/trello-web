@@ -1,11 +1,13 @@
 @import '_setting';
 
-.board{
+.bar{
     padding-left: $gap;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     background-color: $header-color;
     font-size: 14px;
     height: $boardbar-height;
+
   }

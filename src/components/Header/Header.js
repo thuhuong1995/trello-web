@@ -3,7 +3,10 @@ import './Header.scss'
 
 const Header = () => {
     return (
-        <nav className='navbar header'>HEADER</nav>
+        <>
+            <nav className='navbar header'>Todo list with React & trello theme</nav>
+
+        </>
     )
 }
 
